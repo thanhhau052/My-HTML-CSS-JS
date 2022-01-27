@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            min-height: 100vh;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+        }
+
+        .slides {
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            font-size: 20px;
+            position: relative;
+            transition: 0.5s;
+        }
+    
+        .slide img {
+            width: 400px;
+            height: 100%;
+            object-fit: fill;
+        }
+
+        .slide .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .btn {
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="slides">
+        <div class="slide"><img src="/img/hinh1.jpg" alt="1"><div class="text">1</div></div>
+        <div class="slide"><img src="/img/hinh2.jpg" alt="2"><div class="text">2</div></div>
+        <div class="slide"><img src="/img/hinh3.jpg" alt="3"><div class="text">3</div></div>
+        <div class="slide"><img src="/img/hinh4.jpg" alt="4"><div class="text">4</div></div>
+        <div class="slide"><img src="/img/hinh5.jpg" alt="5"><div class="text">5</div></div>
+    </div>
+    <div>
+        <button class="btn next">Next</button>
+        <button class="btn prev">Previous</button>
+    </div>
+    <script src="/library/js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let countSlide = 0;
+            $('.next').click(function() {
+                showSlide(1);
+            })
+            $('.prev').click(function() {
+                showSlide(-1);
+            })
+
+            function showSlide(num) {
+                const slide = $('.slide');
+                countSlide = countSlide + num;
+                console.log(countSlide);
+                if (countSlide  >= slide.length) {
+                    countSlide = 0;
+                }
+                if (countSlide < 0 ) {
+                    countSlide = slide.length-1;
+                }
+                slide.eq(0).css('margin-left', '-'+ (countSlide * 100) + '%')
+            }
+        });
+    </script>
+</body>
+</html>

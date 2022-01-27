@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #region Loading 1*/
+        .icon-loading {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 5px solid blue;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            /* animation: spinner 1s 2 1s linear; sau 2 lần chạy */
+            animation: spinner 1s infinite 1s linear;
+            /* alternate chạy tới chạy lui, */
+        }
+        @keyframes spinner {
+
+            /* from */
+            /* current */
+            /* to */
+            /* xoay dùng transform: rotate(360deg) */
+            /* Chạy thuận kim đồng hồ */
+            /* to {
+                transform: rotate(360deg);
+            } */
+            /* Chạy ngược kim đồng hồ  */
+            from {
+                transform: rotate(360deg);
+            }
+        }
+        /*#endregion */
+        
+        /* #region Loading 2 */
+        .icon-loading2 {
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+            border-radius: 50%;
+            animation: spinner2 1s infinite linear;
+        }
+
+        @keyframes spinner2 {
+            to {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        /* #endregion */
+
+        /* #region Loading 3 */
+        .icon-loading3,
+        .icon-loading4 {
+            display: flex;
+        }
+
+        .icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .item3 {
+            background-color: red;
+            animation: spinner3 3s infinite linear;
+        }
+
+        @keyframes spinner3 {
+            0% {
+                transform: translateX(0) scale(1);
+            }
+
+            25% {
+                transform: translateX(50px) scale(0.8);
+                z-index: -1000;
+            }
+
+            50% {
+                transform: translateX(100px) scale(1);
+            }
+
+            75% {
+                transform: translateX(50px) scale(1.2);
+                z-index: 1000;
+            }
+
+            100% {
+                transform: translateX(0) scale(1);
+            }
+        }
+
+        .item4 {
+            background-color: yellow;
+            animation: spinner4 3s infinite linear;
+        }
+
+        @keyframes spinner4 {
+            0% {
+                transform: translateX(0) scale(1);
+            }
+
+            25% {
+                transform: translateX(-50px) scale(1.2);
+                z-index: 1000;
+            }
+
+            50% {
+                transform: translateX(-100px) scale(1);
+            }
+
+            75% {
+                transform: translateX(-50px) scale(0.8);
+                z-index: -1000;
+            }
+
+            99% {
+                transform: translateX(0) scale(1);
+                z-index: -1000;
+            }
+            100% {
+                transform: translateX(0) scale(1);
+            }
+        }
+        /* #endregion */
+        
+        /* #region Loading 4 */
+        .item5 {
+            background-color: grey;
+            animation: spinner5 3s infinite linear;
+        }
+
+        @keyframes spinner5 {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(100px);
+            }
+
+            100% {
+                transform: translateX(0);
+                z-index: 1;
+            }
+        }
+
+        .item6 {
+            background-color: green;
+            animation: spinner6 3s infinite linear;
+        }
+
+        @keyframes spinner6 {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(-100px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+        /* #endregion */
+    
+        /* #region Loading 5 */
+        .icon-loading5 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0 10px;
+        }
+        .icon-loading5 div {
+            line-height: ;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: hotpink;
+            animation: stagger 2s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955) alternate;
+            animation-delay: calc(-1 * (.5 / 2) * var(--delay));
+        }
+
+        @keyframes stagger {
+            to {
+                transform: translateY(40px);
+            }
+        }
+        /* #endregion */
+    </style>
+</head>
+
+<body>
+    <div class="icon-loading">
+    </div>
+    <hr>
+    <div class="icon-loading2">
+    </div>
+    <div class="icon-loading3">
+        <div class="icon item3">
+        </div>
+        <div class="icon item4">
+        </div>
+    </div>
+    <hr>
+    <hr>
+    <div class="icon-loading4">
+        <div class="icon item5">
+        </div>
+        <div class="icon item6">
+        </div>
+    </div>
+    <hr>
+    <div class="icon-loading5">
+        <div style="--delay: 1s"></div>
+        <div style="--delay: 2s"></div>
+        <div style="--delay: 3s"></div>
+        <div style="--delay: 4s"></div>
+    </div>
+</body>
+
+</html>

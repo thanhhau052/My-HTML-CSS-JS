@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+        /* block sử dụng margin: auto */
+        .box1 {
+            background-color: red;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* inline-block sử dụng cách dưới */
+        .box2 {
+            background-color: blue;
+            display: inline-block; 
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .box3 {
+            background-color: yellow;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, illum?</div>
+</body>
+</html>

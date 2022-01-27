@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/button-effect.css">
+    <link rel="stylesheet" href="/library/css/all.css">
+</head>
+
+<body>
+    <div class="list">
+        <div class="user">
+            <div class="imgBx">
+                <img src="/img/hinh1.jpg" alt="">
+            </div>
+            <div class="details">
+                <h3>Maureen Robinson</h3>
+                <p>Aerospace Engineer</p>
+            </div>
+        </div>
+        <div class="navigation">
+            <span><i class="far fa-edit"></i></span>
+            <span><i class="far fa-heart"></i></span>
+            <span><i class="far fa-trash-alt"></i></span>
+            
+        </div>
+    </div>
+    <script>
+        let navigation = document.querySelector('.navigation')
+        let spans = document.getElementsByTagName('span');
+        let checked = false;
+        navigation.onclick = function() {
+            for (let i = 0; i < spans.length; i++) {
+                const e = spans[i];
+                e.addEventListener('click', function() {
+                    checked = true;
+                })
+                if (checked) {
+                    checked = false;
+                    return;
+                }
+            }
+            navigation.classList.toggle('active') 
+        }
+    </script>
+</body>
+
+</html>

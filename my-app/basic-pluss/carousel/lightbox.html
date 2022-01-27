@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gallery {
+            margin: 10px 50px;
+        }
+        .gallery img {
+            width: 230px;
+            height: 200px;
+            padding: 5px;
+            filter: grayscale(100%);
+            transition: 1s;
+        }
+        .gallery img:hover {
+            filter: grayscale(0);
+            transform: scale(1.1);
+        }
+    </style>
+    <link rel="stylesheet" href="/library/lightbox/lightbox2-2.11.3/src/css/lightbox.css">
+</head>
+
+<body>
+    <div class="gallery">
+        <a href="/img/hinh1.jpg" data-lightbox="mygallery"><img src="/img/hinh1.jpg" alt=""></a>
+        <a href="/img/hinh2.jpg" data-lightbox="mygallery"><img src="/img/hinh2.jpg" alt=""></a>
+        <a href="/img/hinh3.jpg" data-lightbox="mygallery"><img src="/img/hinh3.jpg" alt=""></a>
+        <a href="/img/hinh4.jpg" data-lightbox="mygallery"><img src="/img/hinh4.jpg" alt=""></a>
+        <a href="/img/hinh5.jpg" data-lightbox="mygallery"><img src="/img/hinh5.jpg" alt=""></a>
+        <a href="/img/hinh6.jpg" data-lightbox="mygallery"><img src="/img/hinh6.jpg" alt=""></a>
+        <a href="/img/hinh7.jpg" data-lightbox="mygallery"><img src="/img/hinh7.jpg" alt=""></a>
+        <a href="/img/hinh8.jpg" data-lightbox="mygallery"><img src="/img/hinh8.jpg" alt=""></a>
+        <a href="/img/hinh7.jpg" data-lightbox="mygallery"><img src="/img/hinh7.jpg" alt=""></a>
+        <a href="/img/hinh8.jpg" data-lightbox="mygallery"><img src="/img/hinh8.jpg" alt=""></a>
+    </div>
+    <script src="/library/lightbox/lightbox2-2.11.3/src/js/lightbox.js"></script>
+</body>
+
+</html>

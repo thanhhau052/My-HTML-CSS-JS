@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        ul {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            padding: 20px 0;
+            border: 1px solid red;
+            box-sizing: border-box;
+            /* overflow: hidden; */
+        }
+
+        ul li {
+            width: 250px;
+            height: 250px;
+            margin: 0 10px;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+            transform: translateX(-90%);
+        }
+
+        ul li .item {
+            width: 200px;
+            height: 200px;
+            background: greenyellow;
+            line-height: 200px;
+            display: flex;
+            justify-content: center;
+        }
+        .btn {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <div class="item">1</div>
+        </li>
+        <li>
+            <div class="item">2</div>
+        </li>
+        <li>
+            <div class="item">3</div>
+        </li>
+        <li>
+            <div class="item">4</div>
+        </li>
+        <li>
+            <div class="item">5</div>
+        </li>
+        <li>
+            <div class="item">6</div>
+        </li>
+    </ul>
+    <div><button class="btn btn1">Next</button>
+        <button class="btn btn2">Previous</button></div>
+
+    <script src="/library/js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let count = 0;
+            let item1 = $('.item:eq(0)').css('background', 'red')
+            let item2 = $('.item:eq(5)').css('background', 'blue')
+            $('li:eq(5)').insertBefore('li:eq(0)')
+            $('.btn1').click(function () {
+                $('li:eq(0)').insertAfter('li:eq(5)')
+            })
+            $('.btn2').click(function () {
+                $('li:eq(5)').insertBefore('li:eq(0)')
+            })
+        });
+    </script>
+</body>
+
+</html>
