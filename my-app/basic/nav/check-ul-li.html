@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            min-height: 100vh;
+        }
+        body ul {
+            width: 600px;
+            height: 400px;
+            overflow-y: auto;
+            border: 1px solid black;
+            position: relative;
+            /* top: 50%; */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        body ul li {
+            width: 100px;
+            background-color: rgba(128, 128, 128, 0.5);
+            margin: 10px auto;
+            padding: 5px;
+            text-align: center;
+            list-style: none;
+        }
+
+        body ul li:hover {
+            background-color: rgb(41, 37, 37);
+            color: white;
+        }
+        body ul li:nth-child(15),
+        body ul li:nth-child(1) {
+            position: relative;
+            background-color: red;
+        }
+         .child {
+            position: absolute;
+            top: 0;
+            left: 110px;
+            display: none;
+            display: flex;
+            justify-content: center;
+        }
+        .child ul {
+            width: auto;
+            height: auto;
+            object-fit: fill;
+            padding: 0;
+            border: none;
+            overflow-x: hidden;
+            background-color: darkgrey;
+        }
+        body ul li:nth-child(15) .child,
+        body ul li:nth-child(1) .child {
+            width: 0;
+            transition: all 0.5s ease;
+        }
+        
+        body ul li:nth-child(15):hover .child,
+        body ul li:nth-child(1):hover .child {
+            width: 120px;
+            /* background-color: yellow; */
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>item1
+            <div class="child">
+                <ul>
+                    <li>item-child1</li>
+                    <li>item-child2</li>
+                    <li>item-child3</li>
+                    <li>item-child4</li>
+                    <li>item-child5</li>
+                </ul>
+            </div>
+        </li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <li>item5</li>
+        <li>item6</li>
+        <li>item7</li>
+        <li>item8</li>
+        <li>item9</li>
+        <li>item10</li>
+        <li>item11</li>
+        <li>item12</li>
+        <li>item13</li>
+        <li>item14</li>
+        <li>item15
+            <div class="child">
+                <ul>
+                    <li>item-child1</li>
+                    <li>item-child2</li>
+                    <li>item-child3</li>
+                    <li>item-child4</li>
+                    <li>item-child5</li>
+                </ul>
+            </div></li>
+        <li>item16</li>
+        <li>item17</li>
+        <li>item18</li>
+        <li>item19</li>
+        <li>item20</li>
+    </ul>
+</body>
+</html>
