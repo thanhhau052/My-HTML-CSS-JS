@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Border test</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        /* gap: 30px; chrome không dùng được */
+      }
+      ul li {
+        list-style: none;
+        padding: 10px 0;
+      }
+      ul li a {
+        position: relative;
+        font-size: 4em;
+        text-transform: uppercase;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5); /* *** */
+      }
+
+      ul li a::before {
+        content: attr(data-text);
+        width: 0;
+        color: var(--clr);
+        overflow: hidden;
+        position: absolute;
+        transition: all 1s;
+        border-right: 8px solid var(--clr);
+      }
+
+      ul li a:hover::before {
+        width: 100%;
+        filter: drop-shadow(0 0 25px var(--clr));
+      }
+    </style>
+  </head>
+  <body>
+    <!-- https://www.youtube.com/watch?v=I90no1eQ45E -->
+    <ul>
+      <li style="--clr: #00ade1">
+        <a data-text="&nbsp;Home">&nbsp;Home&nbsp;</a>
+      </li>
+      <li style="--clr: #ff6493">
+        <a data-text="&nbsp;About">&nbsp;About&nbsp;</a>
+      </li>
+      <li style="--clr: #ffdd1c">
+        <a data-text="&nbsp;Services">&nbsp;Services&nbsp;</a>
+      </li>
+      <li style="--clr: #00dc82">
+        <a data-text="&nbsp;Team">&nbsp;Team&nbsp;</a>
+      </li>
+      <li style="--clr: #dc00d4">
+        <a data-text="&nbsp;Contact">&nbsp;Contact&nbsp;</a>
+      </li>
+    </ul>
+  </body>
+</html>
