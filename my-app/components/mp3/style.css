@@ -18,20 +18,31 @@ body {
   border: 1px solid #000;
   box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
   border-radius: 15px;
-  padding: 15px 15px 30px;
+  padding: 20px 15px 30px;
 }
 .music .music-img {
   width: 100%;
   margin: 0 0 25px;
   text-align: center;
 }
-
+.music .music-img.is-play {
+  animation: spinner 5s infinite linear;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .music .music-img img {
   width: 80px;
   height: 80px;
   border-radius: 10px;
+  border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 8px 6px -8px black;
+  box-shadow: 0 0 0 3px #ffb86c, 0 0 0 6px white, 0 0 0 9px #ff6bcb;
 }
 
 .music .music-title {
@@ -83,4 +94,17 @@ body {
 
 .range::-webkit-slider-thumb {
   margin-top: -6px;
+}
+
+.song-repeat {
+  position: relative;
+}
+
+.song-repeat-number {
+  color: red;
+  position: absolute;
+  top: -12px;
+  right: -3px;
+  font-size: 12px;
+  font-weight: 600;
 }
