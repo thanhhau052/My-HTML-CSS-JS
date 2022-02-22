@@ -73,14 +73,14 @@ body {
   border-radius: 50%;
   background-image: linear-gradient(to right bottom, #ff5bcb, #ffb86b);
 }
-.slider {
+.range {
   width: 100%;
   margin-bottom: 10px;
 }
-.slider::-webkit-slider-runnable-track {
+.range::-webkit-slider-runnable-track {
   height: 5px;
 }
 
-.slider::-webkit-slider-thumb {
+.range::-webkit-slider-thumb {
   margin-top: -6px;
 }
