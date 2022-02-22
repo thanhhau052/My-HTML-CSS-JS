@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mp3</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="/library/css/all.css" />
+  </head>
+  <body>
+    <div class="music">
+      <div class="music-img">
+        <img src="/img/hinh1.jpg" alt="" />
+      </div>
+      <h3 class="music-title">Beautiful in white</h3>
+
+      <input type="range" min="0" max="100" value="0" class="slider" />
+      <audio src="./music/NhacNo1.mp3" id="song"></audio>
+      <div class="timer">
+        <div class="duration">2:10</div>
+        <div class="remaining">-3:10s</div>
+      </div>
+      <div class="controls">
+        <i class="fas fa-random click"></i>
+        <i class="fas fa-angle-double-left click"></i>
+        <div class="play click">
+          <div class="play-inner">
+            <i class="fas fa-play" id="play"></i>
+          </div>
+        </div>
+        <i class="fas fa-angle-double-right click"></i>
+        <i class="fas fa-sync-alt click"></i>
+      </div>
+    </div>
+    <script src="./mp3.js"></script>
+  </body>
+</html>

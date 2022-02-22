@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.music {
+  /* width: 300px;
+  height: 400px; */
+  border: 1px solid #000;
+  box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
+  border-radius: 15px;
+  padding: 15px 15px 30px;
+}
+.music .music-img {
+  width: 100%;
+  margin: 0 0 25px;
+  text-align: center;
+}
+
+.music .music-img img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 8px 6px -8px black;
+}
+
+.music .music-title {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.music .timer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 30px;
+}
+
+.music .controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.music .controls .click {
+  cursor: pointer;
+}
+.music .controls .play-inner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(149, 157, 165, 0.5) 0 8px 24px;
+  background-color: #fff;
+}
+.music .controls .play {
+  padding: 7px;
+  border-radius: 50%;
+  background-image: linear-gradient(to right bottom, #ff5bcb, #ffb86b);
+}
+.slider {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.slider::-webkit-slider-runnable-track {
+  height: 5px;
+}
+
+.slider::-webkit-slider-thumb {
+  margin-top: -6px;
+}
