@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      /*--------------cách 1 ONE LINE---------------*/
+      .text-ellipsis {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      /*--------------cách 2 MULTILINE ---------------*/
+      .text-ellipsis--2 {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        /*Addition lines for 2 line or multiline ellipsis*/
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        white-space: normal;
+      }
+
+      /*--------------cách 3 MULTILINE ---------------*/
+      .text-truncate.text-truncate--2 {
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        white-space: normal;
+        word-break: break-all;
+        overflow: hidden;
+      }
+
+      /*--------------cách 4 MULTILINE ---------------*/
+      .max-lines {
+        display: block; /* or inline-block */
+        text-overflow: ellipsis;
+        /* word-wrap: break-word; */
+        word-break: break-all;
+        overflow: hidden;
+        max-height: 3.6em;
+        line-height: 1.8em;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="width: 200px; padding: 20px; border: 1px solid red">
+      <p class="text-ellipsis">
+        (lorem20) Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Repudiandae fugiat nesciunt praesentium debitis voluptatibus animi
+        facere illum vitae deserunt. Corrupti.
+      </p>
+      <hr />
+      <p class="text-ellipsis--2">
+        (lorem20) Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Repudiandae fugiat nesciunt praesentium debitis voluptatibus animi
+        facere illum vitae deserunt. Corrupti.
+      </p>
+      <hr />
+      <p class="text-truncate text-truncate--2">
+        (lorem20) Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Repudiandae fugiat nesciunt praesentium debitis voluptatibus animi
+        facere illum vitae deserunt. Corrupti.
+      </p>
+      <hr />
+      <p class="max-lines">
+        (lorem20) Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Repudiandae fugiat nesciunt praesentium debitis voluptatibus animi
+        facere illum vitae deserunt. Corrupti.
+      </p>
+      <hr />
+      <p>
+        (lorem20) Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Repudiandae fugiat nesciunt praesentium debitis voluptatibus animi
+        facere illum vitae deserunt. Corrupti.
+      </p>
+    </div>
+  </body>
+</html>
