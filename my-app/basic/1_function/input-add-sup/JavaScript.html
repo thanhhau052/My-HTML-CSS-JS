@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>input</title>
+  </head>
+  <body>
+    <div>
+      <span class="tru">-</span>
+      <span class="value">1</span>
+      <span class="cong">+</span>
+    </div>
+    <div>
+      <span class="tru">-</span>
+      <span class="value">2</span>
+      <span class="cong">+</span>
+    </div>
+    <div>
+      <span class="tru">-</span>
+      <span class="value">31</span>
+      <span class="cong">+</span>
+    </div>
+    <script>
+      const cong = document.querySelectorAll(".cong");
+      const tru = document.querySelectorAll(".tru");
+
+      tru.forEach((e) => {
+        e.addEventListener("click", function () {
+          let value = this.nextSibling.nextSibling;
+          value.innerHTML = Number(value.innerHTML) - 1;
+        });
+      });
+      cong.forEach((e) => {
+        e.addEventListener("click", function () {
+          let value = this.previousSibling.previousSibling;
+          value.innerHTML = Number(value.innerHTML) + 1;
+        });
+      });
+    </script>
+  </body>
+</html>
