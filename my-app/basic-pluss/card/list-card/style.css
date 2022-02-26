@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+:root {
+  --primary-color: #f2726a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(45deg, #00853e, #8adaa5);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card {
+  background: #242628;
+  width: 230px;
+  height: 300px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.card__img {
+  width: 80px;
+  height: 80px;
+  border: 4px solid var(--primary-color);
+  border-radius: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+  transition: all 0.5s;
+  transform: translateY(15px);
+}
+
+.card__img:hover {
+  width: 100%;
+  height: 100%;
+  border-radius: unset;
+  border: none;
+  transform: unset;
+}
+
+.card__img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.card h2 {
+  margin-top: 30px;
+}
+.card p {
+  color: var(--primary-color);
+  padding: 10px 0;
+}
+
+.card__social {
+  margin: 15px 0 20px;
+}
+
+.card__social a {
+  color: #fff;
+  margin: 25px 10px;
+  font-size: 20px;
+  transition: all 0.5s;
+  padding: 5px 8px;
+}
+
+.card__social a:hover {
+  color: var(--primary-color);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.card button {
+  width: 100px;
+  height: 40px;
+  outline: none;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  background: transparent;
+}
+
+.card button:hover {
+  background: var(--primary-color);
+}
