@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+:root {
+  --success-color: green;
+  --warning-color: orange;
+  --error-color: red;
+  --success-light: rgba(0, 128, 0, 0.4);
+  --warning-light: rgba(255, 165, 0, 0.4);
+  --error-light: rgba(255, 0, 0, 0.4);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  width: 150px;
+  padding: 10px 0;
+  margin: 0 5px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.success {
+  background: var(--success-color);
+}
+
+.warning {
+  background: var(--warning-color);
+}
+
+.error {
+  background: var(--error-color);
+}
+
+#toasts {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+}
+.toast {
+  margin-bottom: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  overflow: hidden;
+  animation: slide_show 2s ease-out forwards; /* forwards lấy trạng thái đầu */
+}
+
+.toast .content {
+  padding: 10px 20px;
+}
+.toast.success {
+  background: var(--success-light);
+  border-left: 4px solid var(--success-color);
+}
+.toast.success .countdown {
+  background: var(--success-color);
+}
+.toast.warning {
+  background: var(--warning-light);
+  border-left: 4px solid var(--warning-color);
+}
+.toast.warning .countdown {
+  background: var(--warning-color);
+}
+.toast.error {
+  background: var(--error-light);
+  border-left: 4px solid var(--error-color);
+}
+.toast.error .countdown {
+  background: var(--error-color);
+}
+
+.toast .countdown {
+  width: 0;
+  height: 4px;
+  animation: countdown 2s ease-out;
+}
+@keyframes countdown {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes slide_show {
+  0% {
+    transform: translateX(100%);
+  }
+  25% {
+    transform: translateX(-10%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes slide_hide {
+  0% {
+    transform: translateX(0%);
+  }
+  25% {
+    transform: translateX(4%);
+  }
+  50% {
+    transform: translateX(-4%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
