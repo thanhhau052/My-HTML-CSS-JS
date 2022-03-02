@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+:root {
+  --success-color: green;
+  --warning-color: orange;
+  --error-color: red;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #dadada;
+}
+
+img {
+  /* ***** */
+  min-width: 100%; /* ****** ảnh luôn luôn 100%*/
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.container {
+  width: 80%;
+  height: 50%;
+}
+
+.main {
+  height: 80%;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.main .control {
+  position: absolute;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  opacity: 0;
+  transition: all 0.5s;
+  font-size: 18px;
+  top: 50%;
+}
+.main:hover .control {
+  opacity: 1;
+}
+.main .control:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.main .control.prev {
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.main .control.next {
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.list-image {
+  height: 15%;
+  display: flex;
+}
+
+.list-image div {
+  flex: 1; /* ***** list > div > img - Chia đều ảnh */
+  overflow: hidden;
+  padding: 3px; /* ***** list > div > img - Để border cho img */
+}
+
+.active {
+  background: rgb(137, 137, 228);
+}
+
+.img-feature.next {
+  animation: prevImage 1s ease;
+}
+
+.img-feature.prev-old {
+  animation: nextImage 1s ease;
+}
+
+.img-feature.prev-new {
+  animation: nextImageNew 1s ease;
+  position: absolute;
+}
+.img-feature.index {
+  animation: showImage 0.5s ease;
+}
+
+.hide {
+  display: none;
+}
+
+@keyframes nextImage {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes prevImage {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes nextImageNew {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes showImage {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/library/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a href="#tab1" data-toggle="tab" class="nav-link active"
+            >Section 1</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="#tab2" data-toggle="tab" class="nav-link">Section 2</a>
+        </li>
+      </ul>
+      <div class="tab-content py-3">
+        <div class="tab-pane active" id="tab1">
+          <p>I'm in Section 1.</p>
+        </div>
+        <div class="tab-pane" id="tab2">
+          <p>I'm in Section 2.</p>
+        </div>
+      </div>
+    </div>
+    <script src="/library/js/jquery-3.6.0.min.js"></script>
+    <script src="/library/js/bootstrap.min.js"></script>
+    <script>
+      // wire up shown event
+      $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
+        console.log("tab shown...");
+        localStorage.setItem("activeTab", $(e.target).attr("href"));
+      });
+
+      // read hash from page load and change tab
+      var activeTab = localStorage.getItem("activeTab");
+      if (activeTab) {
+        $('.nav-tabs a[href="' + activeTab + '"]').tab("show");
+      }
+    </script>
+  </body>
+</html>
