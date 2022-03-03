@@ -1,9 +1,6 @@
-// const h1 = $("#home h1");
 const home = document.querySelector("#home");
 const animationElements = document.querySelectorAll(".show-on-scroll");
 
-// console.log(home.getClientRects());
-// console.log(window.innerHeight);
 function toggleAnimationElementInWindow(element) {
   let rect = element.getClientRects()[0];
   let heightScreen = window.innerHeight;
