@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      li {
+        list-style: none;
+        margin-bottom: 10px;
+      }
+      .container {
+        display: flex;
+        width: 80%;
+        margin: 20px auto;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .container .btns button {
+        background: linear-gradient(gray, black);
+        padding: 10px 20px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+      }
+      .container .btns button:active {
+        background: linear-gradient(
+          rgba(128, 128, 128, 0.8),
+          rgba(0, 0, 0, 0.8)
+        );
+      }
+
+      .container .elements {
+        height: 400px;
+        overflow-y: scroll;
+        transition: all 0.4s linear;
+      }
+
+      .container .elements .box {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(45deg, pink, purple);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3em;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="btns">
+        <ul>
+          <li><button>button 1</button></li>
+          <li><button>button 2</button></li>
+          <li><button>button 3</button></li>
+          <li><button>button 4</button></li>
+          <li><button>button 5</button></li>
+          <li><button>button 6</button></li>
+          <li><button>button 7</button></li>
+          <li><button>button 8</button></li>
+        </ul>
+      </div>
+      <div>
+        <ul class="elements">
+          <li>
+            <div class="box">1</div>
+          </li>
+          <li>
+            <div class="box">2</div>
+          </li>
+          <li>
+            <div class="box">3</div>
+          </li>
+          <li>
+            <div class="box">4</div>
+          </li>
+          <li>
+            <div class="box">5</div>
+          </li>
+          <li>
+            <div class="box">6</div>
+          </li>
+          <li>
+            <auto class="box">7</auto>
+          </li>
+          <li>
+            <div class="box">8</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("button").on("click", function () {
+        let currentIndex = $(this).parent("li").index();
+        $(".elements li")[currentIndex].scrollIntoView({
+          block: "start",
+          behavior: "smooth",
+        });
+      });
+      {
+        // behavior: "auto"  | "instant" | "smooth",
+        // block:    "start" | "center" | "end" | "nearest",
+        // inline:    "start" | "center" | "end" | "nearest",
+      }
+    </script>
+  </body>
+</html>
